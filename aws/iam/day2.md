@@ -14,5 +14,4 @@
 - IAM controls actions, not resource ownership
 - Start/Stop permissions do not allow launch or terminate
 
-### Proof
-- Custom EC2 start/stop policy JSON
+
