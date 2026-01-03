@@ -1,4 +1,4 @@
-## IAM Day 3 – Explicit Deny to Protect Production
+## IAM Day 2 – Explicit Deny to Protect Production
 
 ### Scenario
 Production EC2 instances must not be terminated accidentally, even by users with high privileges.
