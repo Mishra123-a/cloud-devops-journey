@@ -53,7 +53,7 @@ Load Balancers provide:
 - No dependency on EC2 public IPs
 - Instances can be replaced freely
 
-## EC2 Day 3 – EBS Volume Attach, Mount & Persistence
+## EBS Volume Attach, Mount & Persistence
 
 ### Objective
 Understand how persistent storage works in EC2 by attaching an external EBS volume, mounting it inside Linux, and ensuring data survives instance reboot.
