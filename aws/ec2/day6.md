@@ -18,3 +18,39 @@ This makes default public IPs unreliable for production systems.
 
 ---
 
+## Why Elastic IP is used in production
+
+Elastic IP (EIP) is a **static, account-owned public IPv4 address**.
+
+### Key characteristics
+- Does NOT change on stop/start
+- Can be reattached to another instance
+- Provides a stable public endpoint
+
+### Production use cases
+- Bastion hosts
+- Legacy systems requiring fixed IP allowlists
+- Controlled administrative access
+
+### Limitations
+- Still tied to a single instance
+- No automatic failover
+- Not suitable for scalable applications
+
+Elastic IP solves **stability**, not **availability**.
+
+---
+
+## Why Load Balancers are preferred in production
+
+Load Balancers provide:
+- A stable DNS endpoint
+- Automatic health checks
+- Traffic distribution across instances
+- Integration with Auto Scaling
+
+### Production advantages
+- No dependency on EC2 public IPs
+- Instances can be replaced freely
+- Zero or minimal downtime
+- Better fault tolerance
