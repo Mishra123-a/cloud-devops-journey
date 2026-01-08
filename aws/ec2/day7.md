@@ -66,4 +66,36 @@ Termination means compute is gone forever.
 
 ---
 
+## Storage Thinking – Critical Separation
+
+### Root EBS
+- Contains operating system
+- Persistent across stop/start
+- Deleted on termination by default
+- Not ideal for application data
+
+---
+
+### Additional EBS Volumes
+- Used for application and data storage
+- Independent of EC2 lifecycle
+- Survive stop/start
+- Preferred location for persistent data
+
+---
+
+### Instance Store
+- Temporary (ephemeral) storage
+- Data is lost on:
+  - Stop
+  - Terminate
+  - Host failure
+- Must never be used for critical data
+
+---
+
+### Key principle
+**Storage must outlive compute.**
+
+---
 
