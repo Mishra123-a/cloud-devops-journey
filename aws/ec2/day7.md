@@ -28,4 +28,42 @@ EC2 **by itself** does NOT provide:
 Those capabilities come from **architecture**, not EC2 alone.
 
 ---
+## EC2 Lifecycle – Real Behavior
+
+### Reboot
+- Equivalent to an OS restart
+- No infrastructure-level changes
+- Public IP remains the same
+- Private IP remains the same
+- EBS storage remains intact
+
+Used for:
+- OS updates
+- Application restarts
+
+---
+
+### Stop / Start
+- Instance is powered off and later powered on
+- Root and additional EBS volumes remain intact
+- **Public IP changes** (unless Elastic IP is attached)
+- **Instance Store data is lost**
+
+Used for:
+- Cost saving
+- Instance resizing
+- Maintenance
+
+---
+
+### Terminate
+- Instance is permanently destroyed
+- Root EBS volume is deleted by default
+- Additional EBS volumes may survive (based on configuration)
+- No recovery unless backups exist
+
+Termination means compute is gone forever.
+
+---
+
 
