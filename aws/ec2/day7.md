@@ -93,6 +93,57 @@ Termination means compute is gone forever.
 - Must never be used for critical data
 
 ---
+## Networking & IP Address Logic
+
+### Private IP
+- Used inside AWS network
+- Stable identity for the instance
+- Does NOT change on stop/start
+
+---
+
+### Public IP
+- Ephemeral by default
+- Changes on stop/start
+- Not suitable as a stable endpoint
+
+---
+
+### Elastic IP
+- Provides a static public IP
+- Survives stop/start
+- Solves IP stability
+- Does NOT solve availability
+
+---
+
+## Data vs Availability vs Recovery (Most Important Concept)
+
+These are **three different problems** and must not be confused.
+
+### Data Persistence
+- Solved using EBS and snapshots
+- Prevents data loss
+- Does NOT prevent downtime
+
+---
+
+### Availability
+- Requires multiple running instances
+- Requires load balancing
+- Prevents downtime
+
+---
+
+### Recovery
+- Uses AMIs and automation
+- Reduces restore time
+- Still involves downtime
+
+Confusing these leads to poor architecture decisions.
+
+---
+
 
 ### Key principle
 **Storage must outlive compute.**
