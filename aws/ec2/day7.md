@@ -147,6 +147,34 @@ Confusing these leads to poor architecture decisions.
 
 ### Key principle
 **Storage must outlive compute.**
+## Failure Scenario – Single EC2
+
+If a single EC2 instance fails:
+- Application becomes unavailable immediately
+- Data may still be safe on EBS
+- AWS does NOT automatically recover the instance
+- Human intervention is required
+
+### Conclusion
+A single EC2 instance is always a **single point of failure**.
+
+---
+
+## High Availability Truth
+
+High availability is achieved through **architecture**, not EC2 alone.
+
+- EC2 runs applications
+- Architecture keeps them alive
+
+---
+
+## Key Takeaways
+- EC2 is compute only
+- Storage protects data, not availability
+- One EC2 = single point of failure
+- Zero downtime requires design, not hope
+- Understanding failure behavior matters more than memorizing services
 
 ---
 
