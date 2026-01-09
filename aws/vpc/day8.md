@@ -26,3 +26,22 @@ A VPC itself does **not run applications**.
 It only provides the **networking environment**.
 
 ---
+## VPC Lifecycle (High-Level)
+
+1. A VPC is created with a CIDR block
+2. Subnets are created inside the VPC
+3. Route tables are configured
+4. Gateways (Internet / NAT) are attached if required
+5. Resources like EC2 are launched inside subnets
+6. The VPC continues to exist until manually deleted
+
+A VPC does not automatically scale or terminate.
+
+---
+
+## CIDR and IP Address Ranges
+
+When creating a VPC, an IP address range must be defined using **CIDR notation**.
+Example -  10.0.0.0/16
+
+
