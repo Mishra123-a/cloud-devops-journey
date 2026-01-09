@@ -147,4 +147,72 @@ Typical use cases:
 
 ---
 
+## Route Tables
+
+A route table defines **how traffic flows** within and outside the VPC.
+
+Each subnet must be associated with a route table.
+
+Route tables determine:
+- Whether traffic stays inside the VPC
+- Whether traffic goes to the internet
+- Whether traffic goes through NAT or VPN
+
+Routing is what actually enforces network behavior.
+
+---
+
+## Internet Gateway (IGW)
+
+An Internet Gateway enables communication between the VPC and the internet.
+
+Key points:
+- Only one Internet Gateway can be attached to a VPC
+- It must be explicitly attached
+- A subnet becomes public only when its route table sends traffic to the IGW
+
+The IGW alone does not expose resources.  
+Routing and security rules must allow access.
+
+---
+
+## NAT (Conceptual Overview)
+
+NAT is used when:
+- Instances in private subnets need outbound internet access
+- Inbound internet access should remain blocked
+
+NAT allows:
+- Private → Internet traffic
+- Blocks Internet → Private traffic
+
+This is commonly required for updates and external API calls.
+
+---
+
+## How EC2 Fits Inside a VPC
+
+EC2 instances are always launched **inside a subnet**.
+
+Each EC2 instance:
+- Receives a private IP from the subnet
+- May receive a public IP if allowed
+- Follows the routing rules of the subnet
+
+EC2 does not control networking.  
+**The VPC controls all network behavior.**
+
+---
+
+## Key Takeaways
+
+- VPC is a private network, not a compute service
+- CIDR defines IP capacity and boundaries
+- Subnets divide the VPC and map to AZs
+- Public vs private depends on routing
+- Route tables control traffic flow
+- VPC is the foundation of AWS architecture
+
+---
+
 
