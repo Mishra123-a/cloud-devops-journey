@@ -43,5 +43,108 @@ A VPC does not automatically scale or terminate.
 
 When creating a VPC, an IP address range must be defined using **CIDR notation**.
 Example -  10.0.0.0/16
+This CIDR block:
+- Defines the total IP space for the VPC
+- Controls how many IP addresses are available
+- Cannot be changed after creation
+
+All subnets and resources must use IPs from this range.
+
+---
+
+## Subnets
+
+A subnet is a **smaller IP range inside a VPC**.
+
+Subnets are used to:
+- Organize resources
+- Separate workloads
+- Map resources to Availability Zones
+
+Important rules:
+- Each subnet belongs to **one VPC**
+- Each subnet belongs to **one Availability Zone**
+- Subnet CIDR must be a subset of the VPC CIDR
+
+---
+## Public and Private Subnets
+
+Subnets are not public or private by default.  
+They become public or private **based on routing**.
+
+### Public Subnet
+
+A subnet is considered public when:
+- Its route table has a route to an Internet Gateway
+
+Typical use cases:
+- Load balancers
+- Bastion hosts
+- Public-facing services
+
+### Private Subnet
+
+A subnet is considered private when:
+- It does not have a direct route to the Internet Gateway
+
+Typical use cases:
+- Application servers
+- Databases
+- Internal services
+
+---
+## Public and Private Subnets
+
+Subnets are not public or private by default.  
+They become public or private **based on routing**.
+
+### Public Subnet
+
+A subnet is considered public when:
+- Its route table has a route to an Internet Gateway
+
+Typical use cases:
+- Load balancers
+- Bastion hosts
+- Public-facing services
+
+### Private Subnet
+
+A subnet is considered private when:
+- It does not have a direct route to the Internet Gateway
+
+Typical use cases:
+- Application servers
+- Databases
+- Internal services
+
+---
+
+## Public and Private Subnets
+
+Subnets are not public or private by default.  
+They become public or private **based on routing**.
+
+### Public Subnet
+
+A subnet is considered public when:
+- Its route table has a route to an Internet Gateway
+
+Typical use cases:
+- Load balancers
+- Bastion hosts
+- Public-facing services
+
+### Private Subnet
+
+A subnet is considered private when:
+- It does not have a direct route to the Internet Gateway
+
+Typical use cases:
+- Application servers
+- Databases
+- Internal services
+
+---
 
 
