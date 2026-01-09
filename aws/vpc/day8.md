@@ -10,3 +10,19 @@ VPC was introduced to solve the following problems:
 - Difficulty designing secure architectures
 
 A VPC allows customers to build a **private, isolated network inside AWS**, similar to a traditional data center network.
+
+---
+
+## What a VPC Actually Is
+
+A VPC is a **logically isolated virtual network** within AWS.
+
+It represents:
+- A private IP address space
+- A controlled networking boundary
+- The foundation where AWS resources are deployed
+
+A VPC itself does **not run applications**.  
+It only provides the **networking environment**.
+
+---
