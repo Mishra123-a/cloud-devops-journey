@@ -1,4 +1,4 @@
-## VPC Day 1 – Region, AZ, Subnets & High Availability
+## VPC Region, AZ, Subnets & High Availability
 
 ### Objective
 Develop a clear and correct understanding of how AWS Regions, Availability Zones, VPCs, and Subnets relate to each other, 
