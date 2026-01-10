@@ -82,4 +82,24 @@ Result:
 
 ---
 
+## 4. High Availability (HA) – What It Really Means
+
+### Important Correction
+AZ-2 is **NOT** a backup or DR site for AZ-1.
+
+AZ-1 and AZ-2 are:
+- Equals
+- Active at the same time
+
+---
+
+### High Availability Means
+- Application runs in **multiple AZs simultaneously**
+- All AZs are active
+- Traffic is distributed, not duplicated
+
+There is **no standby AZ** in a proper HA design.
+
+---
+
 
