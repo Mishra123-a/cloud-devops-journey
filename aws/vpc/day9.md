@@ -53,4 +53,33 @@ Key characteristics:
 This layout allows applications to run in multiple AZs simultaneously.
 
 ---
+### Important Reality
+Multiple subnets in the **same AZ** do **NOT** provide High Availability.
+
+---
+
+## 3. Wrong vs Correct Subnet Design
+
+### ❌ Wrong Design
+- 4 subnets
+- All subnets placed in **AZ-1**
+
+Result:
+- AZ-1 failure = complete outage
+- No High Availability
+- Equivalent to a single on-prem data center
+
+---
+
+### ✅ Correct Design
+- Subnets distributed across **AZ-1 and AZ-2**
+- Same subnet roles exist in each AZ
+
+Result:
+- AZ failure is survivable
+- Remaining AZ continues serving traffic
+- True High Availability
+
+---
+
 
