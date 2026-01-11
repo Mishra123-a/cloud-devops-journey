@@ -101,3 +101,64 @@ AZ-1 and AZ-2 are:
 There is **no standby AZ** in a proper HA design.
 
 ---
+## 6. Database Reality (Most Important Part)
+
+### Correct and Common DB Design
+
+- Primary Database → AZ-1 (READ + WRITE)
+- Standby / Replica Database → AZ-2 (READ ONLY)
+
+Both databases:
+- Are running
+- Are synchronized
+
+But:
+- **Only ONE database can write at any time**
+
+This is **Active-Passive**, not Active-Active.
+
+---
+
+## 7. What Happens When Primary DB Fails
+
+- Primary DB (AZ-1) fails
+- Standby DB (AZ-2) is promoted
+- Standby becomes the new Primary
+- Applications reconnect
+- Writes resume
+
+At no point do two databases accept writes simultaneously.
+
+---
+
+## 8. Why “DB Active in Both AZs” Is Dangerous Language
+
+Saying:
+> “DB is running in both AZs”
+
+Is correct **only if it means**:
+- One Primary
+- One Standby
+- Single writer model
+
+If it means:
+- Two writable databases at the same time
+
+Then it leads to:
+- Data inconsistency
+- Split-brain
+- Corruption
+
+---
+
+## Key Takeaways
+- Region is geographic
+- AZs are physical and isolated
+- VPC is logical and regional
+- Subnets are AZ-specific
+- High Availability requires multi-AZ design
+- AZs are equals, not backups
+- Databases must follow a single-writer rule
+- Poor AZ understanding leads to fragile architectures
+
+
