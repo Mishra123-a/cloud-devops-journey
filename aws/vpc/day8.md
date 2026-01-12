@@ -143,5 +143,16 @@ NAT allows:
 This is commonly required for updates and external API calls.
 
 ---
+### Security Groups
+- Stateful virtual firewalls
+- Control inbound and outbound traffic at the resource level
+- Applied to ENIs, not subnets
 
+---
+### Network ACLs (NACL)
+- Stateless subnet-level traffic filters
+- Apply to all resources in a subnet
+- Evaluated in order using rule numbers
+
+---
 
