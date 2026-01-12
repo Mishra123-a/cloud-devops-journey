@@ -188,7 +188,39 @@ This is commonly required for updates and external API calls.
 - Does not capture packet payloads
 
 ---
+## Practical Work Performed
 
+### VPC & Subnet Creation
+- Created a custom VPC with defined CIDR range
+- Created subnets inside the VPC
+- Understood AZ-specific nature of subnets
+
+---
+
+### Route Table Configuration
+- Created a custom route table
+- Manually associated subnets with the route table
+- Verified subnet-to-route-table relationship
+
+---
+
+### Internet Gateway Integration
+- Created and attached an Internet Gateway to the VPC
+- Added default route (0.0.0.0/0) pointing to IGW
+- Enabled internet connectivity for public subnet
+
+---
+
+## Key Learnings
+- Subnets are public or private based on routing, not naming
+- Route tables control traffic flow, not security groups
+- Internet access requires correct combination of:
+  - IGW
+  - Route table
+  - Subnet association
+- Many VPC components are architectural, not always directly visible in labs
+
+---
 ### AWS Direct Connect
 - Dedicated private network connection to AWS
 - Reduces latency and improves bandwidth consistency
