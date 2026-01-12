@@ -175,4 +175,23 @@ This is commonly required for updates and external API calls.
 - Requires strict security group rules
 
 ---
+### Elastic IP
+- Static public IP owned by the AWS account
+- Survives stop/start of instances
+- Solves IP stability, not availability
 
+---
+
+### VPC Flow Logs
+- Capture network traffic metadata
+- Used for troubleshooting and security analysis
+- Does not capture packet payloads
+
+---
+
+### AWS Direct Connect
+- Dedicated private network connection to AWS
+- Reduces latency and improves bandwidth consistency
+- Used for hybrid enterprise architectures
+
+---
