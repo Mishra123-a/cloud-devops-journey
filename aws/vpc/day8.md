@@ -72,53 +72,7 @@ Important rules:
 Subnets are not public or private by default.  
 They become public or private **based on routing**.
 
-### Public Subnet
-
-A subnet is considered public when:
-- Its route table has a route to an Internet Gateway
-
-Typical use cases:
-- Load balancers
-- Bastion hosts
-- Public-facing services
-
-### Private Subnet
-
-A subnet is considered private when:
-- It does not have a direct route to the Internet Gateway
-
-Typical use cases:
-- Application servers
-- Databases
-- Internal services
-
----
-## Public and Private Subnets
-
-Subnets are not public or private by default.  
-They become public or private **based on routing**.
-
-### Public Subnet
-
-A subnet is considered public when:
-- Its route table has a route to an Internet Gateway
-
-Typical use cases:
-- Load balancers
-- Bastion hosts
-- Public-facing services
-
-### Private Subnet
-
-A subnet is considered private when:
-- It does not have a direct route to the Internet Gateway
-
-Typical use cases:
-- Application servers
-- Databases
-- Internal services
-
----
+no
 
 ## Public and Private Subnets
 
@@ -187,31 +141,6 @@ NAT allows:
 - Blocks Internet → Private traffic
 
 This is commonly required for updates and external API calls.
-
----
-
-## How EC2 Fits Inside a VPC
-
-EC2 instances are always launched **inside a subnet**.
-
-Each EC2 instance:
-- Receives a private IP from the subnet
-- May receive a public IP if allowed
-- Follows the routing rules of the subnet
-
-EC2 does not control networking.  
-**The VPC controls all network behavior.**
-
----
-
-## Key Takeaways
-
-- VPC is a private network, not a compute service
-- CIDR defines IP capacity and boundaries
-- Subnets divide the VPC and map to AZs
-- Public vs private depends on routing
-- Route tables control traffic flow
-- VPC is the foundation of AWS architecture
 
 ---
 
