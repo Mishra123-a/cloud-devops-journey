@@ -155,4 +155,24 @@ This is commonly required for updates and external API calls.
 - Evaluated in order using rule numbers
 
 ---
+### VPC Peering
+- Private connectivity between VPCs
+- Requires non-overlapping CIDR ranges
+- No transitive routing
+
+---
+
+### VPC Endpoints
+- Private access to AWS services without internet
+- Keeps traffic inside AWS network
+- Used for security and compliance
+
+---
+
+### Bastion Host
+- Publicly accessible EC2 used for administrative access
+- Acts as a controlled entry point to private resources
+- Requires strict security group rules
+
+---
 
