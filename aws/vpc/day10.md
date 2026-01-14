@@ -93,3 +93,29 @@ OR
 **private-rt**
 10.0.0.0/18 → local
 (no internet route added yet)
+
+### Step C: Associated subnets
+- Public subnet → `public-rt`
+- Private subnet → `private-rt`
+
+---
+
+## 6) Traffic Flow (How Packets Actually Move)
+
+### Outbound traffic from an EC2 instance
+1. EC2 sends traffic to destination (example: 8.8.8.8)
+2. Subnet route table checks destination
+3. If route exists → forwards to target (IGW/NAT/etc.)
+4. Security Group + NACL rules decide whether traffic is allowed
+
+If no route exists:
+> Traffic is dropped (blackholed)
+
+---
+
+## 7) Failure Scenario Tested (Most Useful Learning)
+
+### Test: Remove IGW route from public route table
+Action:
+- Removed:
+0.0.0.0/0 → IGW
