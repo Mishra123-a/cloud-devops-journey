@@ -119,3 +119,21 @@ If no route exists:
 Action:
 - Removed:
 0.0.0.0/0 → IGW
+
+
+Result:
+- EC2 in "public subnet" loses internet access
+- Subnet is no longer public
+
+Conclusion:
+> A subnet is not public by name — it is public by routing.
+
+---
+
+## 8) Key Takeaways
+- Route tables control routing, not security
+- `local` route enables VPC internal communication
+- Public subnet = route to IGW
+- Private subnet = no IGW route
+- Wrong route table association breaks connectivity
+- Failure testing is the fastest way to understand VPC networking
