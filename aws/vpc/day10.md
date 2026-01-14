@@ -47,3 +47,24 @@ Every VPC route table automatically contains:
 - Target: **local**
 
 Example: 10.0.0.0/18 → local
+
+Meaning:
+- All subnets inside the VPC can communicate internally
+- This route cannot be removed
+
+---
+
+## 3) How Subnet Association Works
+A subnet must be associated with exactly one route table:
+- If you don’t associate a custom route table, it uses the **main route table**
+- Route tables apply at the **subnet level**, not instance level
+
+Key rule:
+> **Subnet routing behavior depends on the route table attached to that subnet.**
+
+---
+
+## 4) What Makes a Subnet Public vs Private
+
+### Public Subnet (Definition)
+A subnet is **public** only if its route table has: 0.0.0.0/0 → Internet Gateway (IGW)
