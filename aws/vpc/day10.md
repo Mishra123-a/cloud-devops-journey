@@ -68,3 +68,28 @@ Key rule:
 
 ### Public Subnet (Definition)
 A subnet is **public** only if its route table has: 0.0.0.0/0 → Internet Gateway (IGW)
+
+### Private Subnet (Definition)
+A subnet is **private** if it does NOT have a route to IGW.
+Typically it will have:
+- Only local route  
+OR
+- A route to NAT Gateway for outbound internet
+
+---
+
+## 5) Practical Setup Performed
+
+### Step A: Created two route tables
+- `public-rt`
+- `private-rt`
+
+### Step B: Configured routes
+
+**public-rt**
+10.0.0.0/18 → local
+0.0.0.0/0 → igw-xxxx
+
+**private-rt**
+10.0.0.0/18 → local
+(no internet route added yet)
